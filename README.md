@@ -26,7 +26,7 @@ WHEN I choose to update an employee role
 THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
 
  Youtube link:
- [https://youtu.be/YavWJomyF5Q](https://youtu.be/peLLxoLXimQ)
+ 
 Start:
 1)To use this application you first need to run command "npm install";
 2)then navigating to the 'db' folder and logging in to mysql we do this by using "source schema.sql", than "
