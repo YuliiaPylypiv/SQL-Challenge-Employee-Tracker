@@ -1,42 +1,34 @@
--- Adding department data
-INSERT INTO department(name)
-VALUES ("Operations"), ("Marketing"), ("Sales"), ("Legal"), ("Tech");
+INSERT INTO department (name)
+VALUES  ("Engineering"),
+        ("Finance"),
+        ("Interconnected"),
+        ("Sales"),
+        ("Legal");
 
--- Adding role data
-INSERT INTO role(title, salary, department_id)
-VALUES ("Operations Manager",120000, 1),
-    ("Associate",75000, 1),
-    ("Marketing Manager",125000, 2),
-    ("Salesman",90000, 3),
-    ("Lawyer",180000, 4),
-    ("Developer",135000, 5),
-    ("Intern",85000, 5),
-    ("DevOps",120000, 5);
+INSERT INTO role (title, salary, department_id)
+VALUES  ("Engineering Manager", 120000, 1),
+        ("Engineering Lead", 100000, 1),
+        ("Staff Engineer", 80000, 1),
+        ("Finance Manager", 85000, 2),
+        ("Accountant", 70000, 2),
+        ("Brand Advocate Manager", 95000, 3),
+        ("Brand Advocate Sr. Analyst", 82000, 3),
+        ("Brand Advocate Analyst", 70000, 3),
+        ("Sales Manager", 75000, 4),
+        ("Salesperson", 65000, 4),
+        ("Legal Manager", 110000, 5),
+        ("Lawyer", 95000, 5);
 
--- Adding employee data
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Rufus", "Humphry", 1, null),
-    ("Lily", "VanDerWoodsen", 3, null),
-    ("Nate", "Archabald", 5, 2),
-    ("Blair", "Waldorf", 2, 3),
-    ("Serena", "VanDerWoodsen", 3, 3),
-    ("Dan", "Humphry", 4, 3);
-
--- Adding views
-CREATE VIEW employee_info AS
-(SELECT
-role.id AS role_id,
-role.title,
-role.salary,
-department.name AS department_name
-FROM role 
-JOIN department 
-on role.department_id = department.id);
-
-CREATE VIEW employees_with_managers AS
-(SELECT emp.id,
-emp.first_name,
-emp.last_name,
-emp.role_id,
-CONCAT(manager.first_name, ' ', manager.last_name) AS manager_name
-FROM employee AS manager RIGHT OUTER JOIN employee AS emp ON manager.id = emp.manager_id);
+VALUES  ("Roxy", "Say",  1, NULL),
+        ("Jane", "Doe",  2, 1),
+        ("Janet", "Doe",  3, 1), 
+        ("Jennifer", "Doe",  4, NULL), 
+        ("Julia", "Doe",  5, 4),
+        ("Jaya", "Dave",  6, NULL), 
+        ("Janki", "Dave",  7, 6), 
+        ("Juhi", "Dave",  8, 6), 
+        ("Jin", "Dai",  9, NULL), 
+        ("Jooeun", "Dai",  10, 9), 
+        ("Jocelyn", "Davalos",  11, NULL), 
+        ("Jaylia", "Davalos",  12, 11);
